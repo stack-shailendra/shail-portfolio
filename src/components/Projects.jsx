@@ -1,6 +1,6 @@
 
 
-import { div, h1 } from "framer-motion/client"
+import { div, h1, link } from "framer-motion/client"
 import portfolio from "../assets/portfolio.png"
 import weather from "../assets/weather.png"
 import moen from "../assets/moen.png"
@@ -12,6 +12,7 @@ import { motion } from "framer-motion";
 const projectsData = [
   {
     image: fitclub,
+    link: "https://fitclubzym.pages.dev/",
     title: "FitClub",
     description: "Developed and maintained the FitClub web application using HTML, CSS, JavaScript, and React. This is fully responsive single page application.",
    
@@ -20,6 +21,7 @@ const projectsData = [
   },
   {
     image: portfolio,
+    link: "https://myportfolio-1h6.pages.dev/",
     title: "My Portfolio",
     description: "Developed and maintained the Portfolio web application using HTML, TailwindCSS, JavaScript, and React. This is fully responsive single page application, in this project there is a contact service by using this you can directly contact with me.",
     technologies: ["HTML", "TailwindCSS", "JavaScript", "React"],
@@ -27,6 +29,7 @@ const projectsData = [
   },
   {
     image: moen,
+    link: "https://test.socialannex.com/moen/0/loyalty/dashboard.php?email=john.sa@gmail.com",
     title: "Club Moen",
     description: "Design Ecommerce website using HTML, CSS, JavaScript, and jQuery. In this project user can earn money by completing tasks and earn actions like purchase,birthday,facebook connect etc.",
     technologies: ["HTML", "CSS", "JavaScript",'jQuery'],
@@ -34,6 +37,7 @@ const projectsData = [
   },
   {
     image: weather,
+    link: "https://stack-shailendra.github.io/weathersapp/",
     title: "Weather Application",
     description: "Design and Developed weather application by openweatherapi using HTML, CSS, JavaScript. In this project user can get weather information of any city by entering city name.",
     technologies: ["HTML", "CSS", "JavaScript"],
@@ -59,9 +63,9 @@ const ProjectCard = ({ project }) => {
   return (
     <ScrollReveal>
     <div className="flex flex-col items-center gap-8 md:flex-row md:gap-24">
-      <img src={project.image} alt="" className="w-full cursor-pointer
+     <a href={project.link} target="_blank"> <img src={project.image} alt="" className="w-full cursor-pointer
       rounded-2xl transition-all duration-300
-      hover:scale-105 md:w-[300px]" />
+      hover:scale-105 md:w-[300px]" /></a> 
 
       <div className="flex flex-col gap-3 ">
         <div className="text-xl font-semibold">{project.title}</div>
